@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Chopper portrait">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#fff0ba"/>
+      <stop offset="100%" stop-color="#e9c46a"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <circle cx="200" cy="190" r="132" fill="#ffffff" opacity="0.28"/>
+  <circle cx="200" cy="196" r="110" fill="#8a6239" opacity="0.86"/>
+  <path d="M125 171c17-33 44-53 75-53s58 20 75 53c-20-8-48-12-75-12s-55 4-75 12z" fill="#f7e6c0"/>
+  <path d="M142 180c16-15 34-22 58-22s42 7 58 22c-12 7-33 11-58 11s-46-4-58-11z" fill="#f4d7a4"/>
+  <circle cx="173" cy="184" r="7" fill="#fff"/>
+  <circle cx="227" cy="184" r="7" fill="#fff"/>
+  <circle cx="173" cy="186" r="3" fill="#8a6239"/>
+  <circle cx="227" cy="186" r="3" fill="#8a6239"/>
+  <path d="M180 210c8 5 32 5 40 0" fill="none" stroke="#8a6239" stroke-width="6" stroke-linecap="round"/>
+  <path d="M153 248c18 15 31 21 47 21s29-6 47-21" fill="none" stroke="#8a6239" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="200" cy="200" r="148" fill="none" stroke="#fff5dd" stroke-width="10"/>
+  <circle cx="200" cy="200" r="166" fill="none" stroke="#2c1810" stroke-width="4" opacity="0.65"/>
+  <text x="200" y="338" text-anchor="middle" font-family="Cinzel, serif" font-size="28" fill="#2c1810" letter-spacing="3">CHOPPER</text>
+  <text x="200" y="366" text-anchor="middle" font-family="Crimson Text, serif" font-size="18" fill="#2c1810">Doctor · Cotton Candy Lover</text>
+</svg>

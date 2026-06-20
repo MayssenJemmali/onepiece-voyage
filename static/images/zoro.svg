@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Roronoa Zoro portrait">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#d6eadf"/>
+      <stop offset="100%" stop-color="#5f8f71"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <circle cx="200" cy="190" r="132" fill="#ffffff" opacity="0.18"/>
+  <circle cx="200" cy="196" r="110" fill="#14311f" opacity="0.88"/>
+  <path d="M128 169c12-35 37-63 72-63s60 28 72 63c-20-9-44-13-72-13s-52 4-72 13z" fill="#d8e4cc"/>
+  <path d="M140 177c16-17 34-25 60-25s44 8 60 25c-12 8-33 13-60 13s-48-5-60-13z" fill="#26382d"/>
+  <rect x="144" y="166" width="112" height="18" rx="9" fill="#c7d3be" opacity="0.65"/>
+  <circle cx="172" cy="178" r="7" fill="#fff"/>
+  <circle cx="228" cy="178" r="7" fill="#fff"/>
+  <circle cx="172" cy="180" r="3" fill="#14311f"/>
+  <circle cx="228" cy="180" r="3" fill="#14311f"/>
+  <path d="M176 210c10 6 38 6 48 0" fill="none" stroke="#14311f" stroke-width="6" stroke-linecap="round"/>
+  <path d="M152 247c16 16 30 23 48 23s32-7 48-23" fill="none" stroke="#14311f" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="200" cy="200" r="148" fill="none" stroke="#f5f0dc" stroke-width="10"/>
+  <circle cx="200" cy="200" r="166" fill="none" stroke="#2c1810" stroke-width="4" opacity="0.65"/>
+  <text x="200" y="338" text-anchor="middle" font-family="Cinzel, serif" font-size="32" fill="#2c1810" letter-spacing="4">ZORO</text>
+  <text x="200" y="366" text-anchor="middle" font-family="Crimson Text, serif" font-size="18" fill="#2c1810">First Mate · Pirate Hunter</text>
+</svg>

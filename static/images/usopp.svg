@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Usopp portrait">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#e7cfb0"/>
+      <stop offset="100%" stop-color="#8d5f3f"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <circle cx="200" cy="190" r="132" fill="#fff4e1" opacity="0.22"/>
+  <circle cx="200" cy="196" r="110" fill="#4f2d1f" opacity="0.86"/>
+  <path d="M124 170c16-32 42-53 76-53s60 21 76 53c-20-8-48-12-76-12s-56 4-76 12z" fill="#d9b38c"/>
+  <path d="M144 180c17-15 34-22 56-22s39 7 56 22c-12 7-31 11-56 11s-44-4-56-11z" fill="#7f4e34"/>
+  <circle cx="173" cy="184" r="7" fill="#fff"/>
+  <circle cx="227" cy="184" r="7" fill="#fff"/>
+  <circle cx="173" cy="186" r="3" fill="#4f2d1f"/>
+  <circle cx="227" cy="186" r="3" fill="#4f2d1f"/>
+  <path d="M184 211c7 5 25 5 32 0" fill="none" stroke="#4f2d1f" stroke-width="6" stroke-linecap="round"/>
+  <path d="M152 247c16 15 30 21 48 21s32-6 48-21" fill="none" stroke="#4f2d1f" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="200" cy="200" r="148" fill="none" stroke="#e9ceb3" stroke-width="10"/>
+  <circle cx="200" cy="200" r="166" fill="none" stroke="#2c1810" stroke-width="4" opacity="0.65"/>
+  <text x="200" y="338" text-anchor="middle" font-family="Cinzel, serif" font-size="32" fill="#2c1810" letter-spacing="4">USOPP</text>
+  <text x="200" y="366" text-anchor="middle" font-family="Crimson Text, serif" font-size="18" fill="#2c1810">Sniper · Hero of Elbaf</text>
+</svg>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Grand Voyage — Set Sail for Adventure</title>
+  <meta name="description" content="An adventure through the Grand Line. Explore the Straw Hat crew, their bounties, the islands they've conquered, and the battles still ahead." />
+  <meta name="keywords" content="One Piece, Straw Hats, Grand Line, Luffy, adventure" />
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏴‍☠️</text></svg>" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       NAVIGATION
+       ═══════════════════════════════════════════════════════════ -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="#hero" class="nav-brand" id="nav-brand">
+      <span>🏴‍☠️</span> Grand Voyage
+    </a>
+    <ul class="nav-links">
+      <li><a href="#crew" id="nav-crew">The Crew</a></li>
+      <li><a href="#wanted" id="nav-wanted">Wanted</a></li>
+      <li><a href="#map" id="nav-map">Sea Chart</a></li>
+      <li><a href="#log" id="nav-log">Captain's Log</a></li>
+      <li><a href="#set-sail" id="nav-sail">Set Sail</a></li>
+    </ul>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       HERO SECTION
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="hero" id="hero" aria-label="Hero section">
+    <div class="hero-sky"></div>
+    <div class="stars" aria-hidden="true"></div>
+    <div class="hero-moon" aria-hidden="true"></div>
+
+    <!-- Ocean -->
+    <div class="ocean" aria-hidden="true">
+      <div class="wave wave-3"></div>
+      <div class="wave wave-2"></div>
+      <div class="wave wave-1"></div>
+      <div class="foam-line" style="bottom: 88px;"></div>
+      <div class="foam-line line-2" style="bottom: 100px;"></div>
+    </div>
+
+    <!-- Ship -->
+    <div class="hero-ship" aria-hidden="true">⛵</div>
+
+    <!-- Content -->
+    <div class="hero-content">
+      <p class="hero-subtitle-top">The Straw Hat Pirate Chronicles</p>
+      <h1 class="hero-title">
+        The Grand<br />
+        <span class="and">⟨</span>Voyage<span class="and">⟩</span>
+      </h1>
+      <p class="hero-tagline">
+        One dream. One crew. One absolutely ridiculous amount of world governments to annoy.
+      </p>
+      <a href="#crew" class="hero-cta" id="hero-cta-meet-crew">⚓ &nbsp;Meet the Crew</a>
+    </div>
+
+    <!-- Scroll Hint -->
+    <div class="scroll-hint" aria-hidden="true">
+      <span>Scroll Down</span>
+      <span class="arrow">↓</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       CREW SECTION
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="crew-section" id="crew" aria-label="Crew members">
+    <div class="section-header reveal">
+      <span class="section-label">Aboard the Thousand Sunny</span>
+      <h2 class="section-title">The Straw Hat Pirates</h2>
+      <div class="section-divider"><span class="diamond">✦</span></div>
+      <p style="font-family: var(--font-accent); font-style: italic; color: var(--ink-faded); max-width: 500px; margin: 1rem auto 0; font-size: 1rem;">
+        Nine people. Dozens of impossible victories. One extremely small ship.
+      </p>
+    </div>
+
+    <div class="crew-grid">
+      {% for member in crew %}
+      <article
+        class="crew-card reveal reveal-delay-{{ loop.index }}"
+        id="crew-{{ member.name | replace(' ', '-') | lower }}"
+        aria-label="{{ member.name }}, {{ member.role }}"
+        style="--card-color: {{ member.flag_color }};"
+      >
+        <div class="crew-card-flag"></div>
+
+        <div class="crew-card-image">
+          <img
+            src="{{ member.image }}"
+            alt="{{ member.name }} — {{ member.role }} of the Straw Hat Pirates"
+            loading="lazy"
+            onerror="this.style.display='none'; this.parentElement.innerHTML += '<div style=\'font-size:4rem;line-height:1\'>🏴‍☠️</div>'"
+          />
+        </div>
+
+        <div class="crew-card-body">
+          <p class="crew-role">{{ member.role }}</p>
+          <h3 class="crew-name">{{ member.name }}</h3>
+          <p class="crew-epithet">"{{ member.epithet }}"</p>
+          <div class="crew-divider"></div>
+          <p class="crew-desc">{{ member.description }}</p>
+          <div class="crew-bounty-tag">
+            ☠ &nbsp;{{ member.bounty }} Berries
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       WANTED BOARD
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="wanted-section" id="wanted" aria-label="Wanted posters board">
+    <div class="section-header reveal">
+      <span class="section-label">Marine Headquarters — Restricted</span>
+      <h2 class="section-title">Wanted. Dead or Alive.</h2>
+      <div class="section-divider"><span class="diamond">✦</span></div>
+      <p style="font-family: var(--font-accent); font-style: italic; color: var(--parchment-dark); max-width: 500px; margin: 1rem auto 0; font-size: 1rem; opacity: 0.8;">
+        The Marines would like these people to stop existing. They haven't managed it yet.
+      </p>
+    </div>
+
+    <div class="wanted-grid">
+      {% for pirate in wanted %}
+      <article
+        class="wanted-poster reveal reveal-delay-{{ loop.index }}"
+        id="wanted-{{ pirate.name | replace(' ', '-') | lower }}"
+        aria-label="Wanted poster for {{ pirate.name }}"
+      >
+        <!-- Pushpin -->
+        <div class="pushpin" aria-hidden="true">
+          <div class="pin-head"></div>
+          <div class="pin-body"></div>
+        </div>
+
+        <header class="wanted-header">Wanted</header>
+        <p class="wanted-marine-stamp">World Government — Marine Headquarters</p>
+
+        <!-- Photo -->
+        <div class="wanted-photo">
+          <img
+            src="{{ pirate.image }}"
+            alt="Wanted poster photo of {{ pirate.name }}"
+            loading="lazy"
+            onerror="this.style.display='none'; this.parentElement.innerHTML += '<div style=\'font-size:5rem;padding:2rem\'>🏴‍☠️</div>'"
+          />
+          <div class="wanted-photo-overlay" aria-hidden="true"></div>
+        </div>
+
+        <!-- Info -->
+        <div class="wanted-info">
+          <h3 class="wanted-name">{{ pirate.name }}</h3>
+          <p class="wanted-epithet">a.k.a. "{{ pirate.epithet }}"</p>
+
+          <div class="wanted-bounty-section">
+            <span class="bounty-label">Reward</span>
+            <span class="bounty-amount">฿{{ pirate.bounty }}</span>
+            <span class="bounty-currency">Berries</span>
+          </div>
+
+          <p class="wanted-crime">
+            <strong>Crimes:</strong> {{ pirate.crime }}
+          </p>
+        </div>
+
+        <footer class="wanted-footer">
+          <span>Marine Headquarters</span>
+          <span class="danger-badge">{{ pirate.danger }} Dangerous</span>
+        </footer>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       TREASURE MAP SECTION
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="map-section" id="map" aria-label="Treasure map of the Grand Line">
+    <div class="section-header reveal">
+      <span class="section-label">Grand Line Navigation Chart</span>
+      <h2 class="section-title">Sea Chart of the Known World</h2>
+      <div class="section-divider"><span class="diamond">✦</span></div>
+      <p style="font-family: var(--font-accent); font-style: italic; color: var(--ink-faded); max-width: 500px; margin: 1rem auto 0; font-size: 1rem;">
+        Islands conquered, seas crossed, governments infuriated. Hover to explore.
+      </p>
+    </div>
+
+    <div class="map-container reveal">
+      <div class="treasure-map" role="img" aria-label="Interactive nautical map of the Grand Line">
+        <div class="map-parchment-overlay" aria-hidden="true"></div>
+        <div class="map-grid" aria-hidden="true"></div>
+
+        <!-- Compass Rose (SVG) -->
+        <svg class="compass-rose" aria-label="Compass rose" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="46" fill="rgba(245,230,200,0.95)" stroke="#2c1810" stroke-width="2"/>
+          <circle cx="50" cy="50" r="38" fill="none" stroke="#8b6914" stroke-width="0.5" stroke-dasharray="3 2"/>
+          <!-- N -->
+          <polygon points="50,8 45,50 50,42 55,50" fill="#c0392b"/>
+          <!-- S -->
+          <polygon points="50,92 45,50 50,58 55,50" fill="#2c1810"/>
+          <!-- E -->
+          <polygon points="92,50 50,45 58,50 50,55" fill="#2c1810"/>
+          <!-- W -->
+          <polygon points="8,50 50,45 42,50 50,55" fill="#2c1810"/>
+          <!-- Diagonals -->
+          <polygon points="76,24 50,46 52,50 58,44" fill="#8b6914" opacity="0.6"/>
+          <polygon points="24,76 50,54 48,50 42,56" fill="#8b6914" opacity="0.6"/>
+          <polygon points="76,76 54,50 50,52 56,58" fill="#8b6914" opacity="0.6"/>
+          <polygon points="24,24 46,50 50,48 44,42" fill="#8b6914" opacity="0.6"/>
+          <circle cx="50" cy="50" r="5" fill="#c9a84c" stroke="#2c1810" stroke-width="1.5"/>
+          <!-- Direction labels -->
+          <text x="50" y="5" text-anchor="middle" font-family="Cinzel, serif" font-size="8" font-weight="bold" fill="#c0392b">N</text>
+          <text x="50" y="99" text-anchor="middle" font-family="Cinzel, serif" font-size="8" fill="#2c1810">S</text>
+          <text x="98" y="53" text-anchor="middle" font-family="Cinzel, serif" font-size="8" fill="#2c1810">E</text>
+          <text x="3" y="53" text-anchor="middle" font-family="Cinzel, serif" font-size="8" fill="#2c1810">W</text>
+        </svg>
+
+        <!-- Route SVG Lines -->
+        <div class="map-route" aria-hidden="true">
+          <svg class="route-path-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path class="route-path"
+              d="M 12,65 Q 17,60 22,58 Q 30,55 38,45 Q 46,35 55,30 Q 62,40 68,50 Q 75,62 82,40"
+            />
+            <path class="route-path" style="stroke-dasharray: 6 4; opacity: 0.3;"
+              d="M 82,40 Q 77,56 72,72"
+            />
+          </svg>
+        </div>
+
+        <!-- Ocean waves decoration -->
+        <div class="map-ocean-waves" aria-hidden="true"></div>
+
+        <!-- Island Nodes -->
+        {% for island in islands %}
+        <div
+          class="island-node {% if not island.visited %}unvisited{% endif %}"
+          id="island-{{ island.id }}"
+          style="left: {{ island.x }}%; top: {{ island.y }}%;"
+          role="button"
+          tabindex="0"
+          aria-label="{{ island.name }}: {{ island.subtitle }}"
+        >
+          <div class="island-pin" style="background: {{ island.color }};">
+            <span class="island-icon">{{ island.icon }}</span>
+          </div>
+
+          <div class="island-tooltip" role="tooltip">
+            <div class="island-tooltip-name">{{ island.name }}</div>
+            <div class="island-tooltip-sub">{{ island.subtitle }}</div>
+            <div class="island-tooltip-lore">{{ island.lore }}</div>
+          </div>
+        </div>
+        {% endfor %}
+
+        <!-- Map Title Watermark -->
+        <div style="
+          position: absolute;
+          bottom: 1rem;
+          left: 1.5rem;
+          font-family: 'Cinzel', serif;
+          font-size: 0.55rem;
+          letter-spacing: 3px;
+          color: rgba(44,24,16,0.4);
+          text-transform: uppercase;
+          z-index: 5;
+        ">Grand Line Navigation Chart · Year 1532</div>
+
+      </div><!-- .treasure-map -->
+
+      <!-- Legend -->
+      <div class="map-legend" aria-label="Map legend">
+        <div class="legend-item">
+          <div class="legend-dot" style="background: var(--green-island);"></div>
+          <span>Visited Island</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background: rgba(44,24,16,0.7); border-color: rgba(201,168,76,0.4);"></div>
+          <span>Uncharted</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background: transparent; border-color: var(--gold-dark);"></div>
+          <span style="font-style: italic; color: var(--gold-dark);">Hover islands to discover lore</span>
+        </div>
+      </div>
+
+    </div><!-- .map-container -->
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       ADVENTURE LOG
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="log-section" id="log" aria-label="Captain's adventure log">
+    <div class="section-header reveal">
+      <span class="section-label">Personal Log — Monkey D. Luffy</span>
+      <h2 class="section-title">The Captain's Log</h2>
+      <div class="section-divider"><span class="diamond">✦</span></div>
+      <p style="font-family: var(--font-accent); font-style: italic; color: var(--ink-faded); max-width: 500px; margin: 1rem auto 0; font-size: 1rem;">
+        A mostly accurate account of adventures. The inaccuracies are Usopp's fault.
+      </p>
+    </div>
+
+    <div class="log-timeline" aria-label="Timeline of adventures">
+      <div class="timeline-spine" aria-hidden="true"></div>
+
+      {% for entry in adventure_log %}
+      <article class="log-entry reveal" id="log-entry-{{ loop.index }}" aria-label="{{ entry.title }}">
+
+        <div class="log-date">
+          <span class="date-text">{{ entry.date }}</span>
+        </div>
+
+        <div class="log-dot" aria-hidden="true">
+          <div class="dot-circle {{ entry.outcome }}"
+            title="{{ 'Victory' if entry.outcome == 'victory' else 'Defeat — but we got back up' }}">
+            {{ '⚔' if entry.outcome == 'victory' else '💀' }}
+          </div>
+        </div>
+
+        <div class="log-card">
+          <p class="entry-location">📍 {{ entry.location }}</p>
+          <h3 class="entry-title">{{ entry.title }}</h3>
+          <p class="entry-text">{{ entry.entry }}</p>
+          <div class="entry-meta">
+            <span class="meta-tag {{ entry.outcome }}-tag">
+              {{ '⚔ Victory' if entry.outcome == 'victory' else '💀 Defeat' }}
+            </span>
+            <span class="meta-tag weather-tag">☁ {{ entry.weather }}</span>
+          </div>
+        </div>
+
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FINAL CTA
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="cta-section" id="set-sail" aria-label="Call to adventure">
+
+    <!-- Background decoration -->
+    <div class="cta-bg-islands" aria-hidden="true">
+      <span class="bg-island" style="top:15%; left:5%;  --dur:18s; --delay:0s;">🏝️</span>
+      <span class="bg-island" style="top:70%; left:85%; --dur:22s; --delay:3s;">⛵</span>
+      <span class="bg-island" style="top:40%; left:90%; --dur:16s; --delay:1s;">⚓</span>
+      <span class="bg-island" style="top:80%; left:10%; --dur:25s; --delay:5s;">🗺️</span>
+      <span class="bg-island" style="top:20%; left:75%; --dur:20s; --delay:2s;">🏴‍☠️</span>
+    </div>
+
+    <div style="position: relative; z-index: 5;">
+      <p class="cta-quote reveal">
+        "I don't want to conquer anything. I just think the guy with the most freedom in this whole ocean... is the Pirate King!"
+      </p>
+      <p class="cta-attribution reveal reveal-delay-1">— Monkey D. Luffy</p>
+
+      <h2 class="cta-title reveal reveal-delay-2">Set Sail.</h2>
+      <p class="cta-subtitle reveal reveal-delay-3">
+        The Grand Line won't explore itself. And Laugh Tale is still out there.
+      </p>
+
+      <div class="cta-buttons reveal reveal-delay-4">
+        <a href="#crew" class="btn-primary" id="cta-meet-crew">⚓ &nbsp;Join the Crew</a>
+        <a href="#map" class="btn-secondary" id="cta-explore-map">🗺️ &nbsp;Explore the Map</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <span class="footer-emblem">🏴‍☠️</span>
+    <p class="footer-text">Grand Voyage · Straw Hat Pirates · Grand Line</p>
+    <p class="footer-subtext">
+      "The sea is vast. The dream is bigger." — A fan tribute to One Piece.
+    </p>
+  </footer>
+
+  <script src="/static/js/main.js"></script>
+</body>
+</html>

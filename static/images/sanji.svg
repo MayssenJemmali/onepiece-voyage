@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Sanji portrait">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#d9e6f7"/>
+      <stop offset="100%" stop-color="#1d3557"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <circle cx="200" cy="190" r="132" fill="#fff9ef" opacity="0.18"/>
+  <circle cx="200" cy="196" r="110" fill="#101a30" opacity="0.86"/>
+  <path d="M122 166c18-34 48-56 78-56s60 22 78 56c-23-8-51-12-78-12s-55 4-78 12z" fill="#c7d8f4"/>
+  <path d="M142 176c16-16 34-24 58-24s42 8 58 24c-13 8-33 13-58 13s-45-5-58-13z" fill="#e8eef9"/>
+  <circle cx="173" cy="180" r="7" fill="#fff"/>
+  <circle cx="227" cy="180" r="7" fill="#fff"/>
+  <circle cx="173" cy="182" r="3" fill="#101a30"/>
+  <circle cx="227" cy="182" r="3" fill="#101a30"/>
+  <path d="M180 209c10 7 30 7 40 0" fill="none" stroke="#101a30" stroke-width="6" stroke-linecap="round"/>
+  <path d="M154 248c18 16 31 23 46 23s28-7 46-23" fill="none" stroke="#101a30" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="200" cy="200" r="148" fill="none" stroke="#f4d6b1" stroke-width="10"/>
+  <circle cx="200" cy="200" r="166" fill="none" stroke="#2c1810" stroke-width="4" opacity="0.65"/>
+  <text x="200" y="338" text-anchor="middle" font-family="Cinzel, serif" font-size="32" fill="#f5ead7" letter-spacing="4">SANJI</text>
+  <text x="200" y="366" text-anchor="middle" font-family="Crimson Text, serif" font-size="18" fill="#d8e6f8">Cook · Black Leg</text>
+</svg>
